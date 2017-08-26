@@ -1,0 +1,113 @@
+/*overall styles*/
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+/*input container styles*/
+
+.input-container {
+	background-color: #455A64;
+	width: 100%;
+	padding: 10px;
+	
+}
+
+
+
+h1 {
+	color: #FFFFFF;
+	text-align: center;
+	padding: 10px;
+	font-weight: 800;
+	font-size: 22px;
+	}
+
+
+.logo { 
+width: 35px;
+height: 25px;
+margin-bottom: -5;
+ }
+
+.main-input {
+	width: 90%;
+	padding: 10px;
+	margin: 10px 10px;
+	font-size: 16px;
+ }
+
+ .button {
+ 	width: 90%;
+ 	margin: 10px 10px;
+ 	background: #FFC107;
+ 	color: #FFFFFF;
+ 	padding: 10px;
+ 	font-size: 16px;
+
+ }
+
+/*output container styles*/
+
+.output-container {
+	background-color: #CFD8DC;
+	width: 100%;
+	
+}
+
+h2 {
+ color: #455A64;
+ font-size: 18px;
+ font-weight: 600;
+ }
+
+/*.left {
+	float: left;
+}
+
+.right {
+	float:right;
+}*/
+
+.website-info {
+	background-color: white;
+	border: 1px solid #607D8B;
+	padding: 5px;
+	margin: 10px;
+}
+
+.website-text {
+	color: #607D8B;
+}
+.underline {
+	border-color: #CFD8DC;
+	margin: 5px;
+}
+
+.bottom-links {
+	color: #455A64;
+}
+
+
+/*media queries*/
+
+@media only screen and (min-width: 515px) {
+    .content-block {
+    width: 50%;
+    float: left;
+	position: relative;
+	height: 100%;
+    }
