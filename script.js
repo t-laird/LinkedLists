@@ -1,6 +1,7 @@
 var enter = document.querySelector('.enterButton');
 var titleField = document.getElementById('title-input');
 var urlField = document.getElementById('website-input');
+var submitErr = document.querySelector('.submit-error');
 
 var art0 = document.querySelector('.art0');
 var art1 = document.querySelector('.art1');
@@ -52,8 +53,18 @@ enter.addEventListener('click',addArticle);
 
 
 function addArticle(){
-	arrayOfArts[articleCount].hidden = false;
-	arrayOfTitles[articleCount].innerText = titleField.value;
-	arrayOfLinks[articleCount].innerText = urlField.value;
-	articleCount++;
+	if (urlField.value === "" || titleField.value === ""){
+		submitErr.innerText = "Please make sure you have entered both a title and a URL before hitting Enter."
+		submitErr.hidden = false;
+	}
+	else{
+		arrayOfArts[articleCount].hidden = false;
+		arrayOfTitles[articleCount].innerText = titleField.value;
+		arrayOfLinks[articleCount].innerText = urlField.value;
+		urlField.value = "";
+		titleField.value = "";
+		titleField.focus();
+		articleCount++;
+		submitErr.hidden = true;
+	}
 }
