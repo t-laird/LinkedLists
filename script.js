@@ -35,17 +35,7 @@ function createHR(){
 	return hr;
 }
 
-
-function addArticle(){
-	
-	var articleCreation = document.createElement('article');
-	articleCreation.setAttribute('class','website-info');
-
-	articleCreation.appendChild(createTitle());
-	
-	articleCreation.appendChild(createHR());
-
-
+function createURL(){
 	var urlCreation = document.createElement('p');
 	urlCreation.setAttribute('id', 'website-url');
 
@@ -54,17 +44,12 @@ function addArticle(){
 	urlA.setAttribute('class', 'website-text underline');
 	urlA.setAttribute('href',urlField.value);
 	urlA.appendChild(urlText);
-
 	urlCreation.appendChild(urlA);
 
-	articleCreation.appendChild(urlCreation);
+	return urlCreation;
+}
 
-	// articleCreation.appendChild(hr);
-
-	articleCreation.appendChild(createHR());
-
-
-
+function createRead(){
 	var readLabel = document.createElement('label');
 	readLabel.setAttribute('for','read-link');
 
@@ -75,8 +60,23 @@ function addArticle(){
 	readInput.setAttribute('value','Read');
 
 	readLabel.appendChild(readInput);
+}
 
-	articleCreation.appendChild(readLabel);
+
+function addArticle(){
+	
+	var articleCreation = document.createElement('article');
+	articleCreation.setAttribute('class','website-info');
+
+	articleCreation.appendChild(createTitle());
+	
+	articleCreation.appendChild(createHR());
+
+	articleCreation.appendChild(createURL());
+
+	articleCreation.appendChild(createHR());
+
+	articleCreation.appendChild(createRead());
 
 	var deleteLabel = document.createElement('label');
 	deleteLabel.setAttribute('for','delete-link');
