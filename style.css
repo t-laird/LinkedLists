@@ -87,7 +87,7 @@ margin-bottom: -5;
 
 h2 {
  color: #455A64;
- font-size: 18px;
+ font-size: 16pt;
  font-weight: 600;
  }
 
@@ -104,7 +104,8 @@ h2 {
 	background-color: white;
 	border: 1px solid #607D8B;
 	padding: 5px;
-	margin: 10px;
+	margin: 20px;
+	width: 88%;
 }
 
 #website-title{
@@ -114,15 +115,26 @@ h2 {
 #website-url{
 	padding-left: 5px;
 }
+
 .website-text {
 	color: #607D8B;
 }
+
+.website-text:hover {
+	text-decoration: underline #FFC107;
+}
+
+.website-text.read {
+	text-decoration: underline #CFD8DC;
+}
+
 .line {
 	color: #CFD8DC;
 	background-color: #CFD8DC;
 	height: 1px;
 	margin: 5px;
 	border-style: none;
+	margin-bottom: 14px;
 }
 
 .bottom-links {
@@ -145,21 +157,17 @@ text-decoration: underline #FFC107
 	text-decoration: none;
 }
 
-.website-text:hover {
-	text-decoration: underline #FFC107;
-}
+
 
 input#read-link.read {
 	color: #F05A28;
 }
 
-.website-text.read {
-	text-decoration: underline #CFD8DC;
-}
+
 
 /*media queries*/
 
-@media only screen and (min-width: 515px) {
+@media only screen and (min-width: 697px) {
     .content-block {
     width: 50%;
     float: left;
@@ -193,6 +201,10 @@ input#read-link.read {
  padding: 6px;
  font-size: 13px;
  	margin-top: 18px;
+ 	}
+
+ 	.website-info {
+ 		width: 90%;
  	}
  }
 
