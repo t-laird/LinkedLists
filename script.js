@@ -28,6 +28,13 @@ function createTitle(){
 	return titleCreation;
 }
 
+function createHR(){
+	var hr = document.createElement('hr');
+	hr.setAttribute('class','line');
+
+	return hr;
+}
+
 
 function addArticle(){
 	
@@ -35,11 +42,8 @@ function addArticle(){
 	articleCreation.setAttribute('class','website-info');
 
 	articleCreation.appendChild(createTitle());
-
-	var hr = document.createElement('hr');
-	hr.setAttribute('class','line');
 	
-	articleCreation.appendChild(hr);
+	articleCreation.appendChild(createHR());
 
 
 	var urlCreation = document.createElement('p');
