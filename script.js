@@ -87,4 +87,7 @@ function addArticle(){
 
 	articleContainer.appendChild(articleCreation);
 	articleCount++;
+	titleField.value = "";
+	urlField.value = "";
+	titleField.focus();
 }
