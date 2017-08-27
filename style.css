@@ -15,6 +15,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
+	background-color: #CFD8DC;
 }
 
 /*input container styles*/
@@ -50,9 +51,14 @@ margin-bottom: -5;
 
 .main-input {
 	width: 90%;
-	padding: 10px;
+	padding: 5px;
 	margin: 10px 10px;
-	font-size: 16px;
+	font-size: 20px;
+	font-weight: 300;
+ }
+
+ .main-input::placeholder {
+ 	color: #CFD8DC;
  }
 
  .button {
@@ -62,6 +68,8 @@ margin-bottom: -5;
  	color: #FFFFFF;
  	padding: 10px;
  	font-size: 16px;
+ 	border: none;
+ 	font-weight: 600;
 
  }
 
@@ -79,7 +87,7 @@ margin-bottom: -5;
 
 h2 {
  color: #455A64;
- font-size: 18px;
+ font-size: 16pt;
  font-weight: 600;
  }
 
@@ -96,7 +104,8 @@ h2 {
 	background-color: white;
 	border: 1px solid #607D8B;
 	padding: 5px;
-	margin: 10px;
+	margin: 20px;
+	width: 88%;
 }
 
 #website-title{
@@ -106,31 +115,96 @@ h2 {
 #website-url{
 	padding-left: 5px;
 }
+
 .website-text {
 	color: #607D8B;
 }
-.underline {
+
+.website-text:hover {
+	text-decoration: underline #FFC107;
+}
+
+.website-text.read {
+	text-decoration: underline #CFD8DC;
+}
+
+.line {
 	color: #CFD8DC;
 	background-color: #CFD8DC;
 	height: 1px;
 	margin: 5px;
 	border-style: none;
+	margin-bottom: 14px;
 }
 
 .bottom-links {
 	color: #455A64;
+	background-color: transparent;
+	text-decoration: none;
+	border: none;
+	font-size: 10pt;
+}
+
+.bottom-links:focus {
+  outline: none;
+}
+
+.bottom-links:hover{
+text-decoration: underline #FFC107	
+}
+
+.underline {
+	text-decoration: none;
 }
 
 
+
+input#read-link.read {
+	color: #F05A28;
+}
 
 
 
 /*media queries*/
 
-@media only screen and (min-width: 515px) {
+@media only screen and (min-width: 697px) {
     .content-block {
     width: 50%;
     float: left;
 	position: relative;
 	height: 100%;
     }
+
+    .input-container {
+    	padding-top: 135px;
+    }
+
+    h1 {
+    	font-size: 42px;
+    }
+
+    .logo { 
+	width: 60px;
+	height: 50px;
+	margin-bottom: -10;
+ 	}
+
+ 	.main-input {
+	width: 90%;
+	padding: 3px;
+	margin: 25px 10px 20px 10px;
+	font-size: 19px;
+	font-weight: 300;
+ }
+
+.button {
+ padding: 6px;
+ font-size: 13px;
+ 	margin-top: 18px;
+ 	}
+
+ 	.website-info {
+ 		width: 90%;
+ 	}
+ }
+
