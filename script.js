@@ -14,7 +14,7 @@ function checkEmpties(){
  		submitErr.hidden = false;
 	}else{
 		submitErr.hidden = true;
-		addArticle();
+		addClearCountFocus();
 	}
 }
 
@@ -60,24 +60,11 @@ function createRead(){
 	readInput.setAttribute('value','Read');
 
 	readLabel.appendChild(readInput);
+
+	return readLabel;
 }
 
-
-function addArticle(){
-	
-	var articleCreation = document.createElement('article');
-	articleCreation.setAttribute('class','website-info');
-
-	articleCreation.appendChild(createTitle());
-	
-	articleCreation.appendChild(createHR());
-
-	articleCreation.appendChild(createURL());
-
-	articleCreation.appendChild(createHR());
-
-	articleCreation.appendChild(createRead());
-
+function createDelete(){
 	var deleteLabel = document.createElement('label');
 	deleteLabel.setAttribute('for','delete-link');
 
@@ -89,9 +76,39 @@ function addArticle(){
 
 	deleteLabel.appendChild(deleteInput);
 
-	articleCreation.appendChild(deleteLabel);
+	return deleteLabel;
+}
+
+function createArticle(){
+	var createArticle = document.createElement('article');
+	createArticle.setAttribute('class','website-info');
+
+	return createArticle;
+}
+
+
+function addArticle(){
+	
+	var articleCreation = createArticle();
+
+	articleCreation.appendChild(createTitle());
+	
+	articleCreation.appendChild(createHR());
+
+	articleCreation.appendChild(createURL());
+
+	articleCreation.appendChild(createHR());
+
+	articleCreation.appendChild(createRead());
+
+	articleCreation.appendChild(createDelete());
 
 	articleContainer.appendChild(articleCreation);
+}
+
+function addClearCountFocus(){
+	addArticle();
+
 	articleCount++;
 	titleField.value = "";
 	urlField.value = "";
