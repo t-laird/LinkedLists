@@ -61,10 +61,7 @@ function addArticle(){
 
 	// articleCreation.appendChild(hr);
 
-	var hr2 = document.createElement('hr');
-	hr2.setAttribute('class','line');
-
-	articleCreation.appendChild(hr2);
+	articleCreation.appendChild(createHR());
 
 
 
