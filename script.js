@@ -18,18 +18,23 @@ function checkEmpties(){
 	}
 }
 
-function addArticle(){
-	
-	var articleCreation = document.createElement('article');
-	articleCreation.setAttribute('class','website-info');
-
+function createTitle(){
 	var titleCreation = document.createElement('h2');
 	titleCreation.setAttribute('id','website-title');
 
 	var titleText = document.createTextNode(titleField.value);
 	titleCreation.appendChild(titleText);
 
-	articleCreation.appendChild(titleCreation);
+	return titleCreation;
+}
+
+
+function addArticle(){
+	
+	var articleCreation = document.createElement('article');
+	articleCreation.setAttribute('class','website-info');
+
+	articleCreation.appendChild(createTitle());
 
 	var hr = document.createElement('hr');
 	hr.setAttribute('class','line');
