@@ -15,6 +15,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
+	background-color: #CFD8DC
 }
 
 /*input container styles*/
@@ -62,6 +63,7 @@ margin-bottom: -5;
  	color: #FFFFFF;
  	padding: 10px;
  	font-size: 16px;
+ 	border: none;
 
  }
 
