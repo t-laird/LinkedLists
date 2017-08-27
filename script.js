@@ -2,6 +2,7 @@ var enter = document.querySelector('.enterButton');
 var titleField = document.getElementById('title-input');
 var urlField = document.getElementById('website-input');
 var submitErr = document.querySelector('.submit-error');
+var articleContainer = document.querySelector('.output-container');
 
 var art0 = document.querySelector('.art0');
 var art1 = document.querySelector('.art1');
@@ -49,22 +50,61 @@ var arrayOfLinks = [link0,link1,link2,link3,link4,link5,link6,link7,link8,link9,
 
 var articleCount = 0;
 
-enter.addEventListener('click',addArticle);
+enter.addEventListener('click',checkEmpties);
 
-
-function addArticle(){
-	if (urlField.value === "" || titleField.value === ""){
+function checkEmpties(){
+	if (titleField.value === "" || urlField.value === ""){
 		submitErr.innerText = "Please make sure you have entered both a title and a URL before hitting Enter."
-		submitErr.hidden = false;
-	}
-	else{
-		arrayOfArts[articleCount].hidden = false;
-		arrayOfTitles[articleCount].innerText = titleField.value;
-		arrayOfLinks[articleCount].innerText = urlField.value;
-		urlField.value = "";
-		titleField.value = "";
-		titleField.focus();
-		articleCount++;
+ 		submitErr.hidden = false;
+	}else{
 		submitErr.hidden = true;
+		addArticle();
 	}
 }
+
+function addArticle(){
+	
+	var articleCreation = document.createElement('article');
+	articleCreation.className = 'website-info';
+
+	var titleCreation = document.createElement('h2');
+	titleCreation.setAttribute('id','website-title');
+
+	var titleText = document.createTextNode(titleField.value);
+	titleCreation.appendChild(titleText);
+
+	articleCreation.appendChild(titleCreation);
+
+	articleContainer.appendChild(articleCreation);
+
+	// var urlCreation = document.createElement('p');
+	// urlCreation.setAttribute('id', 'website-url');
+	// var urlA = document.createElement('a');
+	// urlA.setAttribute('class', 'website-text underline');
+	// urlA.setAttribute('href',urlText);
+	// var urlText = document.createTextNode(urlField.value);
+	
+
+
+
+
+	// sectionContainer
+}
+
+
+// function addArticle(){
+// 	if (urlField.value === "" || titleField.value === ""){
+// 		submitErr.innerText = "Please make sure you have entered both a title and a URL before hitting Enter."
+// 		submitErr.hidden = false;
+// 	}
+// 	else{
+// 		arrayOfArts[articleCount].hidden = false;
+// 		arrayOfTitles[articleCount].innerText = titleField.value;
+// 		arrayOfLinks[articleCount].innerText = urlField.value;
+// 		urlField.value = "";
+// 		titleField.value = "";
+// 		titleField.focus();
+// 		articleCount++;
+// 		submitErr.hidden = true;
+// 	}
+// }
