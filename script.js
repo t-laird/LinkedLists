@@ -129,16 +129,7 @@ function addArticle(){
 
 	articleCreation.appendChild(deleteLabel);
 
-	// <label for = "read-link">
-	// 	<input id="read-link" class="left bottom-links" type="button" value ="Read">
-	// </label>
-
-	// <label for = "delete-link">
-	// 	<input id="delete-link" class="right bottom-links" type="button" value ="Delete">
-	// </label>
-
 	articleContainer.appendChild(articleCreation);
-
 }
 
 
