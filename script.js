@@ -65,7 +65,7 @@ function checkEmpties(){
 function addArticle(){
 	
 	var articleCreation = document.createElement('article');
-	articleCreation.className = 'website-info';
+	articleCreation.setAttribute('class','website-info');
 
 	var titleCreation = document.createElement('h2');
 	titleCreation.setAttribute('id','website-title');
@@ -75,20 +75,70 @@ function addArticle(){
 
 	articleCreation.appendChild(titleCreation);
 
+	var hr = document.createElement('hr');
+	hr.setAttribute('class','line');
+	
+	articleCreation.appendChild(hr);
+
+
+	var urlCreation = document.createElement('p');
+	urlCreation.setAttribute('id', 'website-url');
+
+	var urlA = document.createElement('a');
+	var urlText = document.createTextNode(urlField.value);
+	urlA.setAttribute('class', 'website-text underline');
+	urlA.setAttribute('href',urlField.value);
+	urlA.appendChild(urlText);
+
+	urlCreation.appendChild(urlA);
+
+	articleCreation.appendChild(urlCreation);
+
+	// articleCreation.appendChild(hr);
+
+	var hr2 = document.createElement('hr');
+	hr2.setAttribute('class','line');
+
+	articleCreation.appendChild(hr2);
+
+
+
+	var readLabel = document.createElement('label');
+	readLabel.setAttribute('for','read-link');
+
+	var readInput = document.createElement('input');
+	readInput.setAttribute('id','read-link');
+	readInput.setAttribute('class','left bottom-links');
+	readInput.setAttribute('type','button');
+	readInput.setAttribute('value','Read');
+
+	readLabel.appendChild(readInput);
+
+	articleCreation.appendChild(readLabel);
+
+	var deleteLabel = document.createElement('label');
+	deleteLabel.setAttribute('for','delete-link');
+
+	var deleteInput = document.createElement('input');
+	deleteInput.setAttribute('id','delete-link');
+	deleteInput.setAttribute('class','right bottom-links');
+	deleteInput.setAttribute('type','button');
+	deleteInput.setAttribute('value','Delete');
+
+	deleteLabel.appendChild(deleteInput);
+
+	articleCreation.appendChild(deleteLabel);
+
+	// <label for = "read-link">
+	// 	<input id="read-link" class="left bottom-links" type="button" value ="Read">
+	// </label>
+
+	// <label for = "delete-link">
+	// 	<input id="delete-link" class="right bottom-links" type="button" value ="Delete">
+	// </label>
+
 	articleContainer.appendChild(articleCreation);
 
-	// var urlCreation = document.createElement('p');
-	// urlCreation.setAttribute('id', 'website-url');
-	// var urlA = document.createElement('a');
-	// urlA.setAttribute('class', 'website-text underline');
-	// urlA.setAttribute('href',urlText);
-	// var urlText = document.createTextNode(urlField.value);
-	
-
-
-
-
-	// sectionContainer
 }
 
 
