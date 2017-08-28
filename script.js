@@ -3,10 +3,35 @@ var titleField = document.getElementById('title-input');
 var urlField = document.getElementById('website-input');
 var submitErr = document.querySelector('.submit-error');
 var articleContainer = document.querySelector('.output-container');
+var totalLinks = document.querySelector('.totalLinks');
+var totalRead = document.querySelector('.readLinks');
 var articleCount = 0;
+var readCount = 0;
 
 
 enter.addEventListener('click',checkEmpties);
+titleField.addEventListener('keyup',enterEnable);
+urlField.addEventListener('keyup',enterEnable);
+
+// enter.addEventListener('click',validURL);
+
+// function validURL(){
+// 	if ((urlField.value).isValid()){
+// 		enter.disabled=false;
+// 	}
+// 	else{
+// 		enter.disabled=true;
+// 	}
+// }
+
+
+function enterEnable(){
+	if (titleField.value === "" || urlField.value === ""){
+		enter.disabled = true;
+	}else{
+		enter.disabled = false;
+	}
+}
 
 function checkEmpties(){
 	if (titleField.value === "" || urlField.value === ""){
@@ -17,7 +42,6 @@ function checkEmpties(){
 		addClearCountFocus();
 	}
 }
-
 function createTitle(){
 	var titleCreation = document.createElement('h2');
 	titleCreation.setAttribute('id','website-title');
@@ -111,8 +135,10 @@ function addClearCountFocus(){
 	addArticle();
 
 	articleCount++;
+	totalLinks.innerText = "Total number of links on the page: " + articleCount;
 	titleField.value = "";
 	urlField.value = "";
+	enter.disabled = true;
 	titleField.focus();
 }
 
@@ -121,11 +147,14 @@ function addClearCountFocus(){
         $(this).closest('.website-info').toggleClass('read');
         $(this).parents('.website-info').find('.read-link').toggleClass('read');
         $(this).parents('.website-info').find('.website-text').toggleClass('read');
+        totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
     });
 
 $('.output-container').on('click', '.delete-link', function () {
         $(this).closest('.website-info').remove();
         $(this).parents('.website-info').find('.delete-link').remove();
+        articleCount--;
+        totalLinks.innerText = "Total number of links on the page: " + articleCount.style.fontWeight;
     });
 
 
