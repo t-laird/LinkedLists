@@ -151,7 +151,7 @@ function addClearCountFocus(){
 	addArticle();
 
 	articleCount++;
-	totalLinks.innerText = "Total number of links on the page: " + articleCount;
+	totalLinks.innerText = articleCount;
 	titleField.value = "";
 	urlField.value = "";
 	enter.disabled = true;
@@ -162,21 +162,21 @@ function addClearCountFocus(){
         $(this).closest('.website-info').toggleClass('read');
         $(this).parents('.website-info').find('.read-link').toggleClass('read');
         $(this).parents('.website-info').find('.website-text').toggleClass('read');
-        totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
+        totalRead.innerText = $('.read').length/3;
     });
 
 	$('.output-container').on('click', '.delete-link', function () {
         $(this).closest('.website-info').remove();
         $(this).parents('.website-info').find('.delete-link').remove();
         articleCount--;
-        totalLinks.innerText = "Total number of links on the page: " + articleCount;
-    	totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
+        totalLinks.innerText = articleCount;
+    	totalRead.innerText =  $('.read').length/3;
     });
 
 $('.clearButton').on('click', function(){
 $('.read').remove('.website-info')
-totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
-totalLinks.innerText = "Total number of links on the page: " + $('.website-info').length;
+totalRead.innerText =  $('.read').length/3;
+totalLinks.innerText = $('.website-info').length;
 articleCount = $('.website-info').length;
 });
 
