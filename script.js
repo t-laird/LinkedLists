@@ -49,13 +49,13 @@ function createURL(){
 	return urlCreation;
 }
 
+
 function createRead(){
 	var readLabel = document.createElement('label');
 	readLabel.setAttribute('for','read-link');
 
 	var readInput = document.createElement('input');
-	readInput.setAttribute('id','read-link');
-	readInput.setAttribute('class','left bottom-links');
+	readInput.setAttribute('class','left bottom-links read-link');
 	readInput.setAttribute('type','button');
 	readInput.setAttribute('value','Read');
 
@@ -64,13 +64,14 @@ function createRead(){
 	return readLabel;
 }
 
+
 function createDelete(){
 	var deleteLabel = document.createElement('label');
 	deleteLabel.setAttribute('for','delete-link');
 
 	var deleteInput = document.createElement('input');
-	deleteInput.setAttribute('id','delete-link');
-	deleteInput.setAttribute('class','right bottom-links');
+	// deleteInput.setAttribute('id','delete-link');
+	deleteInput.setAttribute('class','right bottom-links delete-link');
 	deleteInput.setAttribute('type','button');
 	deleteInput.setAttribute('value','Delete');
 
@@ -114,3 +115,22 @@ function addClearCountFocus(){
 	urlField.value = "";
 	titleField.focus();
 }
+
+
+  $('.output-container').on('click', '.read-link', function () {
+        $(this).closest('.website-info').toggleClass('read');
+        $(this).parents('.website-info').find('.read-link').toggleClass('read');
+        $(this).parents('.website-info').find('.website-text').toggleClass('read');
+    });
+
+$('.output-container').on('click', '.delete-link', function () {
+        $(this).closest('.website-info').remove();
+        $(this).parents('.website-info').find('.delete-link').remove();
+    });
+
+
+
+
+
+
+

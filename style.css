@@ -128,6 +128,7 @@ h2 {
 	text-decoration: underline #CFD8DC;
 }
 
+
 .line {
 	color: #CFD8DC;
 	background-color: #CFD8DC;
@@ -150,7 +151,7 @@ h2 {
 }
 
 .bottom-links:hover{
-text-decoration: underline #FFC107	
+text-decoration: underline #FFC107;	
 }
 
 .underline {
@@ -158,8 +159,7 @@ text-decoration: underline #FFC107
 }
 
 
-
-input#read-link.read {
+input.read-link.read {
 	color: #F05A28;
 }
 
