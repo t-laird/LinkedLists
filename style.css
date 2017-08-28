@@ -77,12 +77,30 @@ margin-bottom: -5;
 	background: #FFD773;
  }
 
+ .button:disabled {
+ 	background: #828789;
+ }
+
 /*output container styles*/
 
 .output-container {
 	background-color: #CFD8DC;
 	width: 100%;
 	
+}
+
+p.totals {
+	background-color: #828789;
+	color: white;
+	text-align: center;
+	padding: 6px;
+	margin-top: 18px;
+	width: 90%;
+	margin-left: 10px;
+}
+
+p.totallinks{
+	margin-top: 40px;
 }
 
 h2 {

@@ -12,17 +12,19 @@
 <body>
 	<section class="input-container content-block">
 			<h1> Linked  <img src = "linked-list-logo.svg" alt ="linked list logo" class="logo"> List</h1>
-			<form>
+			<form action="">
 				<label for="title-input">
 					<input id ="title-input" class="main-input" type="text" placeholder ="Website Title">
 				</label>
 				<label for="website-input">
-					<input id ="website-input" class="main-input" type="text" placeholder = "Website URL">
+					<input id ="website-input" class="main-input" type="URL" placeholder = "Website URL" required pattern="https?://.+">
 				</label>
 				<p class = "submit-error" hidden> * </p>
 				<label for = "submit-button">
-					<input id="submit-button" class="button enterButton" type="button" value ="Enter">
+					<input id="submit-button" class="button enterButton" type="button" value ="Enter" disabled>
 				</label>
+				<p class="totals totallinks"> Total number of links on the page: 0</p>
+				<p class="totals readlinks"> Total number of read links on the page: 0</p>
 			</form>
 
 			<!-- <input id="read-link" class="blue" type="button" value ="read"> -->
