@@ -49,13 +49,27 @@ function createURL(){
 	return urlCreation;
 }
 
+// function createRead(){
+// 	var readLabel = document.createElement('label');
+// 	readLabel.setAttribute('for','read-link');
+
+// 	var readInput = document.createElement('input');
+// 	readInput.setAttribute('id','read-link');
+// 	readInput.setAttribute('class','left bottom-links');
+// 	readInput.setAttribute('type','button');
+// 	readInput.setAttribute('value','Read');
+
+// 	readLabel.appendChild(readInput);
+
+// 	return readLabel;
+// }
+
 function createRead(){
 	var readLabel = document.createElement('label');
 	readLabel.setAttribute('for','read-link');
 
 	var readInput = document.createElement('input');
-	readInput.setAttribute('id','read-link');
-	readInput.setAttribute('class','left bottom-links');
+	readInput.setAttribute('class','left bottom-links read-link');
 	readInput.setAttribute('type','button');
 	readInput.setAttribute('value','Read');
 
@@ -63,6 +77,7 @@ function createRead(){
 
 	return readLabel;
 }
+
 
 function createDelete(){
 	var deleteLabel = document.createElement('label');
@@ -114,3 +129,21 @@ function addClearCountFocus(){
 	urlField.value = "";
 	titleField.focus();
 }
+
+// $('.read-link').on('click', function () {
+//   $('input.read-link').addClass('read');
+// });
+
+ $('.output-container').on('click', '.read-link', function () {
+        $(this).closest('.website-info').toggleClass('read');
+        $(this).parents('.bookmark-card').find('.bookmark-url').toggleClass('read');
+        $(this).parents('.bookmark-card').find('.read-link').toggleClass('read');
+        $(this).parents('.bookmark-card').find('.bookmark-delete-button').toggleClass('read');
+        readCardCount();
+      });
+
+
+
+
+
+
