@@ -7,6 +7,7 @@ var totalLinks = document.querySelector('.totalLinks');
 var totalRead = document.querySelector('.readLinks');
 var articleCount = 0;
 var readCount = 0;
+var totalArticle =0;
 
 
 enter.addEventListener('click',checkURL);
@@ -172,9 +173,13 @@ function addClearCountFocus(){
     	totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
     });
 
-	$('.clearButton').on('click', function(){
-		$('.read').remove('.website-info')
-	});
+$('.clearButton').on('click', function(){
+$('.read').remove('.website-info')
+totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
+totalLinks.innerText = "Total number of links on the page: " + $('.website-info').length;
+articleCount = $('.website-info').length;
+});
+
 
 
 
