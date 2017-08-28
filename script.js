@@ -161,9 +161,12 @@ function addClearCountFocus(){
 
   	$('.output-container').on('click', '.read-link', function () {
         // $(this).closest('.website-info').toggleClass('read');
+
+  $('.output-container').on('click', '.read-link', function () {
+        $(this).closest('.website-info').toggleClass('read');
         $(this).parents('.website-info').find('.read-link').toggleClass('read');
         $(this).parents('.website-info').find('.website-text').toggleClass('read');
-        totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/2;
+        totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
     });
 
 	$('.output-container').on('click', '.delete-link', function () {
@@ -171,8 +174,13 @@ function addClearCountFocus(){
         $(this).parents('.website-info').find('.delete-link').remove();
         articleCount--;
         totalLinks.innerText = "Total number of links on the page: " + articleCount;
-        totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/2;
+    	totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
     });
+
+$('.clearButton').on('click', function(){
+$('.read').remove('.website-info')
+});
+
 
 
 
