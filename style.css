@@ -90,14 +90,18 @@ margin-bottom: -5;
 	
 }
 
+span.accent-color {
+	color: #FFC107;
+}
+
 p.totals {
-	background-color: #828789;
+	/*background-color: #828789;*/
 	color: white;
 	text-align: center;
 	padding: 6px;
 	margin-top: 18px;
 	width: 90%;
-	dispaly: block;
+	/*dispaly: block;*/
 	margin-left: auto;
 	margin-right: auto;
 }
