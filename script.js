@@ -144,17 +144,17 @@ function addClearCountFocus(){
 
 
   $('.output-container').on('click', '.read-link', function () {
-        $(this).closest('.website-info').toggleClass('read');
+        // $(this).closest('.website-info').toggleClass('read');
         $(this).parents('.website-info').find('.read-link').toggleClass('read');
         $(this).parents('.website-info').find('.website-text').toggleClass('read');
-        totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
+        totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/2;
     });
 
 $('.output-container').on('click', '.delete-link', function () {
         $(this).closest('.website-info').remove();
         $(this).parents('.website-info').find('.delete-link').remove();
         articleCount--;
-        totalLinks.innerText = "Total number of links on the page: " + articleCount.style.fontWeight;
+        totalLinks.innerText = "Total number of links on the page: " + articleCount;
     });
 
 
