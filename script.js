@@ -10,7 +10,7 @@ var readCount = 0;
 var totalArticle =0;
 
 
-enter.addEventListener('click',checkEmpties);
+enter.addEventListener('click',checkURL);
 titleField.addEventListener('keyup',enterEnable);
 urlField.addEventListener('keyup',enterEnable);
 
@@ -25,6 +25,21 @@ urlField.addEventListener('keyup',enterEnable);
 // 	}
 // }
 
+function checkURL() {
+//use built in regEx to build a regular expression
+  var regEx = /^(ftp|http|https):\/\/[^ "]+$/
+// test the url against the regular expression
+	var fieldEntry = urlField.value;
+// if match, run check if empty function
+  if (regEx.test(fieldEntry)) {
+    checkEmpties();
+  }
+  //if no match, reference error message
+  else {
+    submitErr.innerText = "Please enter a valid URL";
+    submitErr.hidden = false;
+  }
+}
 
 function enterEnable(){
 	if (titleField.value === "" || urlField.value === ""){
@@ -143,15 +158,14 @@ function addClearCountFocus(){
 	titleField.focus();
 }
 
-
-  $('.output-container').on('click', '.read-link', function () {
+  	$('.output-container').on('click', '.read-link', function () {
         $(this).closest('.website-info').toggleClass('read');
         $(this).parents('.website-info').find('.read-link').toggleClass('read');
         $(this).parents('.website-info').find('.website-text').toggleClass('read');
         totalRead.innerText = "Total number of read links on the page: "+ $('.read').length/3;
     });
 
-$('.output-container').on('click', '.delete-link', function () {
+	$('.output-container').on('click', '.delete-link', function () {
         $(this).closest('.website-info').remove();
         $(this).parents('.website-info').find('.delete-link').remove();
         articleCount--;
@@ -165,6 +179,7 @@ totalRead.innerText = "Total number of read links on the page: "+ $('.read').len
 totalLinks.innerText = "Total number of links on the page: " + $('.website-info').length;
 articleCount = $('.website-info').length;
 });
+
 
 
 
