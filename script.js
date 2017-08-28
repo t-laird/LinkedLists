@@ -130,17 +130,14 @@ function addClearCountFocus(){
 	titleField.focus();
 }
 
-// $('.read-link').on('click', function () {
-//   $('input.read-link').addClass('read');
-// });
 
- $('.output-container').on('click', '.read-link', function () {
+  $('.output-container').on('click', '.read-link', function () {
         $(this).closest('.website-info').toggleClass('read');
-        $(this).parents('.bookmark-card').find('.bookmark-url').toggleClass('read');
-        $(this).parents('.bookmark-card').find('.read-link').toggleClass('read');
-        $(this).parents('.bookmark-card').find('.bookmark-delete-button').toggleClass('read');
-        readCardCount();
-      });
+        $(this).parents('.website-info').find('.read-link').toggleClass('read');
+        $(this).parents('.website-info').find('.website-text').toggleClass('read');
+        // $(this).parents('.bookmark-card').find('.bookmark-delete-button').toggleClass('read');
+	});
+
 
 
 

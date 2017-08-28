@@ -140,9 +140,9 @@ h2 {
 
 .bottom-links {
 	color: #455A64;
-	/*background-color: transparent;*/
+	background-color: transparent;
 	text-decoration: none;
-	/*border: none;*/
+	border: none;
 	font-size: 10pt;
 }
 
