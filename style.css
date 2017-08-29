@@ -87,7 +87,6 @@ margin-bottom: -5;
 .output-container {
 	background-color: #CFD8DC;
 	width: 100%;
-	
 }
 
 span.accent-color {
@@ -192,7 +191,7 @@ input.read-link.read {
 
 /*media queries*/
 
-@media only screen and (min-width: 697px) {
+@media only screen and (min-width: 755px) {
     .content-block {
     width: 50%;
     float: left;
@@ -200,6 +199,12 @@ input.read-link.read {
 	/*height: 100%;*/
 	display: block;
 	overflow: auto;
+
+    }
+
+    .output-container{
+    	overflow-y: scroll;
+    	height: 100%;
     }
 
     .input-container {
