@@ -163,6 +163,7 @@ function addClearCountFocus(){
         $(this).parents('.website-info').find('.read-link').toggleClass('read');
         $(this).parents('.website-info').find('.website-text').toggleClass('read');
         totalRead.innerText = $('.read').length/3;
+        enableClear();
     });
 
 	$('.output-container').on('click', '.delete-link', function () {
@@ -171,6 +172,7 @@ function addClearCountFocus(){
         articleCount--;
         totalLinks.innerText = articleCount;
     	totalRead.innerText =  $('.read').length/3;
+    	enableClear();
     });
 
 $('.clearButton').on('click', function(){
@@ -178,9 +180,37 @@ $('.read').remove('.website-info')
 totalRead.innerText =  $('.read').length/3;
 totalLinks.innerText = $('.website-info').length;
 articleCount = $('.website-info').length;
+enableClear();
 });
 
 
+ var clearButton = document.getElementById('clear-read-button');
+
+
+function enableClear () {
+	if($('.read').length > 0) {
+		clearButton.disabled = false;
+	} else clearButton.disabled = true;
+}
+
+
+// function enterEnable(){
+// 	if (titleField.value === "" || urlField.value === ""){
+// 		enter.disabled = true;
+// 	}else{
+// 		enter.disabled = false;
+// 	}
+// }
+
+
+// function enableClear () {
+// 	if ($'.read').length > 0 {
+// 	clearButton.setAttribute("disabled", "false")
+// 	} else {
+// 		clearButton.setAttribute("diabled", "true")
+// 	}
+
+// }
 
 
 
