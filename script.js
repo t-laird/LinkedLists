@@ -1,29 +1,18 @@
-var enter = document.querySelector('.enterButton');
-var titleField = document.getElementById('title-input');
-var urlField = document.getElementById('website-input');
-var submitErr = document.querySelector('.submit-error');
-var articleContainer = document.querySelector('.output-container');
-var totalLinks = document.querySelector('.totalLinks');
-var totalRead = document.querySelector('.readLinks');
-var articleCount = 0;
-var readCount = 0;
-var totalArticle =0;
+var enter = document.querySelector('.enterButton'); //Selector for enter button
+var titleField = document.getElementById('title-input'); //selector for title field
+var urlField = document.getElementById('website-input'); //selector for URL field
+var submitErr = document.querySelector('.submit-error'); //selector for submit error
+var articleContainer = document.querySelector('.output-container'); //Query selector for article container
+var totalLinks = document.querySelector('.totalLinks'); //Selector for total links
+var totalRead = document.querySelector('.readLinks'); //Selector for read links
+var articleCount = 0; //Initializes article count
+var readCount = 0; //Initializes read count
 
 
 enter.addEventListener('click',checkURL);
 titleField.addEventListener('keyup',enterEnable);
 urlField.addEventListener('keyup',enterEnable);
 
-// enter.addEventListener('click',validURL);
-
-// function validURL(){
-// 	if ((urlField.value).isValid()){
-// 		enter.disabled=false;
-// 	}
-// 	else{
-// 		enter.disabled=true;
-// 	}
-// }
 
 function checkURL() {
 //use built in regEx to build a regular expression
