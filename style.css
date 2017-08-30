@@ -22,33 +22,34 @@ body {
 
 .input-container {
 	background-color: #455A64;
-	width: 100%;
 	padding: 10px;
 	text-align: center;
+	width: 100%;
 	
 }
 
 p.submit-error{
+	color: #FFC107;
 	text-align: center;
-	color: red;
 }
 
 
 
 h1 {
 	color: #FFFFFF;
+	display: inline-block;
+	font-size: 6.0vw;
+	font-weight: 800;
 	text-align: center;
 	padding: 10px;
-	font-weight: 800;
-	font-size: 22px;
 	}
 
 
 .logo { 
-width: 35px;
-height: 25px;
-margin-bottom: -5;
- }
+	height: 8vw;
+	width: 8vw;
+	margin-bottom: -2vw ;
+}
 
 .main-input {
 	width: 90%;
@@ -216,13 +217,15 @@ input.read-link.read {
     }
 
     h1 {
-    	font-size: 42px;
+    	font-size: 5.2vw;
+    	display:inline-block;
     }
 
+
     .logo { 
-	width: 60px;
-	height: 50px;
-	margin-bottom: -10;
+	height: 8vw;
+	width: 8vw;
+	margin-bottom: -2vw;
  	}
 
  	.main-input {
@@ -244,7 +247,7 @@ input.read-link.read {
  	}
  }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1200px) {
  main {
  	width: 90%;
  	margin: 0 auto;
