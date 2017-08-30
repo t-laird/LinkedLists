@@ -22,10 +22,10 @@ function checkURL() {
 	var fieldEntry = urlField.value;
 // if match, run check if empty function
   if (regEx.test(fieldEntry)) {
-    checkEmpties();
+    addClearCountFocus();
   }else if (regEx2.test(fieldEntry)){
   	urlField.value = 'http://' + urlField.value;
-  	checkEmpties()
+  	addClearCountFocus()
   }else {
   //if no match, reference error message
     submitErr.innerText = "Please enter a valid URL";
@@ -41,15 +41,6 @@ function enterEnable(){
 	}
 }
 
-function checkEmpties(){
-	if (titleField.value === "" || urlField.value === ""){
-		submitErr.innerText = "Please make sure you have entered both a title and a URL before hitting Enter."
- 		submitErr.hidden = false;
-	}else{
-		submitErr.hidden = true;
-		addClearCountFocus();
-	}
-}
 function createTitle(){
 	var titleCreation = document.createElement('h2');
 	titleCreation.setAttribute('id','website-title');
@@ -141,13 +132,15 @@ function addArticle(){
 
 function addClearCountFocus(){
 	addArticle();
+	titleField.value = "";
+	urlField.value = "";
 
 	articleCount++;
 	totalLinks.innerText = articleCount;
-	titleField.value = "";
-	urlField.value = "";
-	enter.disabled = true;
+
 	titleField.focus();
+	
+	enter.disabled = true;
 }
 
   	$('.output-container').on('click', '.read-link', function () {
