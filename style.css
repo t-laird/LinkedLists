@@ -128,7 +128,7 @@ h2 {
 	background-color: white;
 	border: 1px solid #607D8B;
 	padding: 5px;
-	margin: 20px;
+	margin: 20px auto; 
 	width: 88%;
 }
 
@@ -192,11 +192,14 @@ input.read-link.read {
 /*media queries*/
 
 @media only screen and (min-width: 755px) {
+    
+	body {
+		background-color: white;
+	}
     .content-block {
     width: 50%;
     float: left;
 	position: relative;
-	/*height: 100%;*/
 	display: block;
 	overflow: auto;
 
@@ -240,4 +243,12 @@ input.read-link.read {
  		width: 90%;
  	}
  }
+
+@media only screen and (min-width: 900px) {
+ main {
+ 	width: 90%;
+ 	margin: 0 auto;
+ }
+}
+
 
