@@ -27,7 +27,6 @@ if (regEx.test(fieldEntry)) {
 	addClearCountFocus()
 	 submitErr.hidden = true;
 }else {
-  //if no match, reference error message
   submitErr.innerText = "Please enter a valid URL";
   submitErr.hidden = false;
 }
