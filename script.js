@@ -17,14 +17,17 @@ urlField.addEventListener('keyup',enterEnable);
 function checkURL() {
 //use built in regEx to build a regular expression
   var regEx = /^(ftp|http|https):\/\/[^ "]+$/
+  var regEx2 = /^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|io|COM|ORG|NET|MIL|EDU|IO)$/
 // test the url against the regular expression
 	var fieldEntry = urlField.value;
 // if match, run check if empty function
   if (regEx.test(fieldEntry)) {
     checkEmpties();
-  }
+  }else if (regEx2.test(fieldEntry)){
+  	urlField.value = 'http://' + urlField.value;
+  	checkEmpties()
+  }else {
   //if no match, reference error message
-  else {
     submitErr.innerText = "Please enter a valid URL";
     submitErr.hidden = false;
   }
