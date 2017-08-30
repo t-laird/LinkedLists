@@ -1,12 +1,13 @@
-var enter = document.querySelector('.enterButton'); //Selector for enter button
-var titleField = document.getElementById('title-input'); //selector for title field
-var urlField = document.getElementById('website-input'); //selector for URL field
-var submitErr = document.querySelector('.submit-error'); //selector for submit error
-var articleContainer = document.querySelector('.output-container'); //Query selector for article container
-var totalLinks = document.querySelector('.totalLinks'); //Selector for total links
-var totalRead = document.querySelector('.readLinks'); //Selector for read links
-var articleCount = 0; //Initializes article count
-var readCount = 0; //Initializes read count
+var enter = document.querySelector('.enterButton'); 
+var titleField = document.getElementById('title-input'); 
+var urlField = document.getElementById('website-input'); 
+var submitErr = document.querySelector('.submit-error'); 
+var articleContainer = document.querySelector('.output-container'); 
+var totalLinks = document.querySelector('.totalLinks'); 
+var totalRead = document.querySelector('.readLinks'); 
+var clearButton = document.getElementById('clear-read-button');
+var articleCount = 0; 
+var readCount = 0; 
 
 
 enter.addEventListener('click',checkURL);
@@ -15,22 +16,21 @@ urlField.addEventListener('keyup',enterEnable);
 
 
 function checkURL() {
-//use built in regEx to build a regular expression
-  var regEx = /^(ftp|http|https):\/\/[^ "]+$/
-  var regEx2 = /^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|io|COM|ORG|NET|MIL|EDU|IO)$/
-// test the url against the regular expression
-	var fieldEntry = urlField.value;
-// if match, run check if empty function
-  if (regEx.test(fieldEntry)) {
-    addClearCountFocus();
-  }else if (regEx2.test(fieldEntry)){
-  	urlField.value = 'http://' + urlField.value;
-  	addClearCountFocus()
-  }else {
+var regEx = /^(ftp|http|https):\/\/[^ "]+$/
+var regEx2 = /^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|io|COM|ORG|NET|MIL|EDU|IO)$/
+var fieldEntry = urlField.value;
+if (regEx.test(fieldEntry)) {
+	addClearCountFocus();
+	 submitErr.hidden = true;
+}else if (regEx2.test(fieldEntry)){
+	urlField.value = 'http://' + urlField.value;
+	addClearCountFocus()
+	 submitErr.hidden = true;
+}else {
   //if no match, reference error message
-    submitErr.innerText = "Please enter a valid URL";
-    submitErr.hidden = false;
-  }
+  submitErr.innerText = "Please enter a valid URL";
+  submitErr.hidden = false;
+}
 }
 
 function enterEnable(){
@@ -93,7 +93,6 @@ function createDelete(){
 	deleteLabel.setAttribute('for','delete-link');
 
 	var deleteInput = document.createElement('input');
-	// deleteInput.setAttribute('id','delete-link');
 	deleteInput.setAttribute('class','right bottom-links delete-link');
 	deleteInput.setAttribute('type','button');
 	deleteInput.setAttribute('value','Delete');
@@ -143,59 +142,49 @@ function addClearCountFocus(){
 	enter.disabled = true;
 }
 
-  	$('.output-container').on('click', '.read-link', function () {
-        $(this).closest('.website-info').toggleClass('read');
-        $(this).parents('.website-info').find('.read-link').toggleClass('read');
-        $(this).parents('.website-info').find('.website-text').toggleClass('read');
-        totalRead.innerText = $('.read').length/3;
-        enableClear();
-    });
-
-	$('.output-container').on('click', '.delete-link', function () {
-        $(this).closest('.website-info').remove();
-        $(this).parents('.website-info').find('.delete-link').remove();
-        articleCount--;
-        totalLinks.innerText = articleCount;
-    	totalRead.innerText =  $('.read').length/3;
-    	enableClear();
-    });
-
-$('.clearButton').on('click', function(){
-$('.read').remove('.website-info')
-totalRead.innerText =  $('.read').length/3;
-totalLinks.innerText = $('.website-info').length;
-articleCount = $('.website-info').length;
-enableClear();
-});
-
-
- var clearButton = document.getElementById('clear-read-button');
-
-
 function enableClear () {
 	if($('.read').length > 0) {
 		clearButton.disabled = false;
 	} else clearButton.disabled = true;
 }
 
-
-// function enterEnable(){
-// 	if (titleField.value === "" || urlField.value === ""){
-// 		enter.disabled = true;
-// 	}else{
-// 		enter.disabled = false;
-// 	}
-// }
+function countReadButton () {
+	totalRead.innerText = $('.read').length/3;
+}
 
 
-// function enableClear () {
-// 	if ($'.read').length > 0 {
-// 	clearButton.setAttribute("disabled", "false")
-// 	} else {
-// 		clearButton.setAttribute("diabled", "true")
-// 	}
+$('.output-container').on('click', '.read-link', function () {
+	$(this).closest('.website-info').toggleClass('read');
+	$(this).parents('.website-info').find('.read-link').toggleClass('read');
+	$(this).parents('.website-info').find('.website-text').toggleClass('read');
+	countReadButton();
+	enableClear();
+});
 
-// }
+$('.output-container').on('click', '.delete-link', function () {
+	$(this).closest('.website-info').remove();
+	$(this).parents('.website-info').find('.delete-link').remove();
+	articleCount--;
+	totalLinks.innerText = articleCount;
+	countReadButton();
+	enableClear();
+});
+
+$('.clearButton').on('click', function(){
+	$('.read').remove('.website-info')
+	countReadButton();
+	totalLinks.innerText = $('.website-info').length;
+	articleCount = $('.website-info').length;
+	enableClear();
+});
+
+
+
+
+
+
+
+
 
 
 
