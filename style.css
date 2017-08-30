@@ -83,12 +83,14 @@ p.totals {
 	margin-left: auto;
 	margin-right: auto;
 	padding: 6px;
+	display: inline-block;
 	text-align: center;
-	width: 90%;
+	width: 30%;
 }
 
 span.accent-color {
 	color: #FFC107;
+	display: inline-block;
 }
 
 /*output container styles*/
@@ -135,6 +137,10 @@ h2 {
 
 .website-text.read {
 	text-decoration: underline #CFD8DC;
+}
+
+article.website-info.read{
+	background-color: #F2F4F4;
 }
 
 .website-text:hover {

@@ -5,6 +5,7 @@ var submitErr = document.querySelector('.submit-error');
 var articleContainer = document.querySelector('.output-container'); 
 var totalLinks = document.querySelector('.totalLinks'); 
 var totalRead = document.querySelector('.readLinks'); 
+var totalUnread = document.querySelector('.unreadlinks');
 var clearButton = document.getElementById('clear-read-button');
 var articleCount = 0; 
 var readCount = 0; 
@@ -135,6 +136,7 @@ function addClearCountFocus(){
 
 	articleCount++;
 	totalLinks.innerText = articleCount;
+	totalUnread.innerText = totalLinks.innerText - ($('.read').length/3);
 
 	titleField.focus();
 	
@@ -157,6 +159,7 @@ $('.output-container').on('click', '.read-link', function () {
 	$(this).parents('.website-info').find('.read-link').toggleClass('read');
 	$(this).parents('.website-info').find('.website-text').toggleClass('read');
 	countReadButton();
+	totalUnread.innerText = totalLinks.innerText - $('.read').length/3;
 	enableClear();
 });
 
@@ -165,6 +168,7 @@ $('.output-container').on('click', '.delete-link', function () {
 	$(this).parents('.website-info').find('.delete-link').remove();
 	articleCount--;
 	totalLinks.innerText = articleCount;
+	totalUnread.innerText = totalLinks.innerText - $('.read').length/3;
 	countReadButton();
 	enableClear();
 });
@@ -173,6 +177,7 @@ $('.clearButton').on('click', function(){
 	$('.read').remove('.website-info')
 	countReadButton();
 	totalLinks.innerText = $('.website-info').length;
+	totalUnread.innerText = totalLinks.innerText - $('.read').length/3;
 	articleCount = $('.website-info').length;
 	enableClear();
 });
