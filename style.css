@@ -3,7 +3,7 @@
 *,
 *:after,
 *:before {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 * {
@@ -11,11 +11,10 @@
 	padding: 0;
 }
 
-
 body {
+	background-color: #CFD8DC;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	background-color: #CFD8DC;
 }
 
 /*input container styles*/
@@ -24,64 +23,73 @@ body {
 	background-color: #455A64;
 	padding: 10px;
 	text-align: center;
-	width: 100%;
-	
+	width: 100%;	
 }
-
-p.submit-error{
-	color: #FFC107;
-	text-align: center;
-}
-
-
 
 h1 {
 	color: #FFFFFF;
 	display: inline-block;
 	font-size: 6.0vw;
 	font-weight: 800;
-	text-align: center;
 	padding: 10px;
-	}
-
+	text-align: center;
+}
 
 .logo { 
 	height: 8vw;
-	width: 8vw;
 	margin-bottom: -2vw ;
+	width: 8vw;
 }
 
 .main-input {
-	width: 90%;
-	padding: 5px;
-	margin: 10px 10px;
 	font-size: 20px;
 	font-weight: 300;
+	margin: 10px 10px;
+	padding: 5px;
+	width: 90%;
  }
 
- .main-input::placeholder {
+.main-input::placeholder {
  	color: #CFD8DC;
  }
 
- .button {
- 	width: 90%;
- 	margin: 10px 10px;
+p.submit-error{
+	color: #FFC107;
+	text-align: center;
+}
+
+.button {
  	background: #FFC107;
- 	color: #FFFFFF;
- 	padding: 10px;
- 	font-size: 16px;
  	border: none;
+ 	color: #FFFFFF;
+ 	font-size: 16px;
  	font-weight: 600;
-
+ 	margin: 10px 10px;
+ 	padding: 10px;
+ 	width: 90%;
  }
 
- .button:hover {
+.button:hover {
 	background: #FFD773;
- }
+}
 
- .button:disabled {
+.button:disabled {
  	background: #828789;
- }
+}
+
+p.totals {
+	color: white;
+	margin-top: 18px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 6px;
+	text-align: center;
+	width: 90%;
+}
+
+span.accent-color {
+	color: #FFC107;
+}
 
 /*output container styles*/
 
@@ -90,39 +98,19 @@ h1 {
 	width: 100%;
 }
 
-span.accent-color {
-	color: #FFC107;
-}
-
-p.totals {
-	/*background-color: #828789;*/
-	color: white;
-	text-align: center;
-	padding: 6px;
-	margin-top: 18px;
-	width: 90%;
-	/*dispaly: block;*/
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
-p.totallinks{
-}
-
 h2 {
- color: #455A64;
- font-size: 16pt;
- font-weight: 600;
+ 	color: #455A64;
+ 	font-size: 16pt;
+ 	font-weight: 600;
  }
 
-.left { 
-	padding-left: 5px;
-}
-
-.right {
-	float:right;
-	padding-right: 10px;
+.line {
+	background-color: #CFD8DC;
+	border-style: none;
+	color: #CFD8DC;
+	height: 1px;
+	margin: 5px;
+	margin-bottom: 14px;
 }
 
 .website-info {
@@ -145,113 +133,112 @@ h2 {
 	color: #607D8B;
 }
 
-.website-text:hover {
-	text-decoration: underline #FFC107;
-}
-
 .website-text.read {
 	text-decoration: underline #CFD8DC;
 }
 
+.website-text:hover {
+	text-decoration: underline #FFC107;
+}
 
-.line {
-	color: #CFD8DC;
-	background-color: #CFD8DC;
-	height: 1px;
-	margin: 5px;
-	border-style: none;
-	margin-bottom: 14px;
+
+.left { 
+	padding-left: 5px;
+}
+
+.right {
+	float:right;
+	padding-right: 10px;
 }
 
 .bottom-links {
-	color: #455A64;
 	background-color: transparent;
-	text-decoration: none;
 	border: none;
+	color: #455A64;
 	font-size: 10pt;
+	text-decoration: none;
 }
 
 .bottom-links:focus {
-  outline: none;
+	outline: none;
+}
+
+input.read-link.read {
+	color: #F05A28;
 }
 
 .bottom-links:hover{
-text-decoration: underline #FFC107;	
+	text-decoration: underline #FFC107;	
 }
 
 .underline {
 	text-decoration: none;
 }
 
-
-input.read-link.read {
-	color: #F05A28;
-}
-
-
-
 /*media queries*/
 
 @media only screen and (min-width: 755px) {
     
-	body {
-		background-color: white;
-	}
-    .content-block {
-    width: 50%;
-    float: left;
-	position: relative;
-	display: block;
-	overflow: auto;
+body {
+	background-color: white;
+}
 
-    }
-
-    .output-container{
-    	overflow-y: scroll;
-    	height: 100%;
-    }
-
-    .input-container {
-    	padding-top: 135px;
-    	height: 100%;
-    }
-
-    h1 {
-    	font-size: 5.2vw;
-    	display:inline-block;
-    }
-
-
-    .logo { 
+.logo { 
 	height: 8vw;
-	width: 8vw;
 	margin-bottom: -2vw;
- 	}
+	width: 8vw;
+}
 
- 	.main-input {
-	width: 90%;
-	padding: 3px;
-	margin: 25px 10px 20px 10px;
+.output-container{
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.input-container {
+	height: 100%;
+	padding-top: 135px;
+}
+
+.main-input {
 	font-size: 19px;
 	font-weight: 300;
- }
+	margin: 25px 10px 20px 10px;
+	padding: 3px;
+	width: 90%;
+}
 
 .button {
- padding: 6px;
- font-size: 13px;
- 	margin-top: 18px;
- 	}
+	font-size: 13px;
+	margin-top: 18px;
+	padding: 6px;
+}
 
- 	.website-info {
- 		width: 90%;
- 	}
- }
+.content-block {
+	display: block;
+	float: left;
+	overflow: auto;
+	position: relative;
+	width: 50%;
+}
+
+h1 {
+	font-size: 5.2vw;
+	display:inline-block;
+}
+
+.website-info {
+	width: 90%;
+}
+
+} /*Media Query Closing } */
 
 @media only screen and (min-width: 1200px) {
- main {
- 	width: 90%;
+
+main {
  	margin: 0 auto;
- }
+ 	width: 90%;
+}
+
 }
 
 
