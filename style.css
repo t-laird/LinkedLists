@@ -85,7 +85,8 @@ p.totals {
 	padding: 6px;
 	display: inline-block;
 	text-align: center;
-	width: 30%;
+	width: 90%;
+	font-size: 14px;
 }
 
 span.accent-color {
